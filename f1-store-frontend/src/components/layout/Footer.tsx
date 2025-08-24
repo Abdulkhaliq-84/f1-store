@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h3 className="footer-title">Project Info</h3>
             <ul className="footer-links">
-              <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">View on GitHub</a></li>
+              <li><a href="https://github.com/Abdulkhaliq-84/f1-store" target="_blank" rel="noopener noreferrer">View on GitHub</a></li>
               <li><a href="#" onClick={() => window.open('mailto:contact@example.com')}>Contact Developer</a></li>
               <li><span>React + TypeScript</span></li>
               <li><span>ASP.NET Core API</span></li>

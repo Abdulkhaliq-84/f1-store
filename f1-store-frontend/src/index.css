@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  color: #333333;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#root {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Ensure consistent white background */
+body, html, #root {
+  background: #ffffff !important;
+}

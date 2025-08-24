@@ -1,0 +1,326 @@
+/* Driver Products Page Styles - scoped */
+.driver-products-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.driver-products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Driver Header */
+.driver-header {
+  margin-bottom: 3rem;
+}
+
+.driver-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.driver-back-btn:hover {
+  color: #000000;
+}
+
+/* Driver Banner */
+.driver-banner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--driver-color), var(--driver-color));
+  border-radius: 16px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.driver-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skewX(-15deg);
+  transform-origin: top;
+}
+
+.driver-banner-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  object-fit: cover;
+  z-index: 1;
+  position: relative;
+}
+
+.driver-banner-info {
+  z-index: 1;
+  position: relative;
+}
+
+.driver-banner-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.driver-banner-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+
+.driver-banner-description {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Products Section */
+.driver-products-section {
+  margin-top: 3rem;
+}
+
+.driver-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.driver-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+.driver-section-subtitle {
+  font-size: 1.1rem;
+  color: #666666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Products Grid */
+.driver-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Product Card */
+.driver-product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.driver-product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Product Image */
+.driver-product-image {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: #f8f9fa;
+  flex-shrink: 0;
+}
+
+.driver-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+
+
+/* Product Info */
+.driver-product-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.driver-product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333333;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+.driver-product-price {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.driver-current-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+.original-price {
+  font-size: 1rem;
+  color: #999999;
+  text-decoration: line-through;
+}
+
+/* Favorite Button */
+.driver-favorite-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666666;
+  backdrop-filter: blur(10px);
+  z-index: 3;
+}
+
+.driver-favorite-btn:hover {
+  background-color: #ff6b6b;
+  color: white;
+  transform: scale(1.1);
+}
+
+.driver-favorite-btn:hover svg {
+  fill: white;
+}
+
+/* Error Container */
+.driver-error-container {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-container h1 {
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+.error-container p {
+  font-size: 1.1rem;
+  color: #666666;
+  margin-bottom: 2rem;
+}
+
+.driver-back-btn {
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.driver-back-btn:hover {
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .driver-products-container {
+    padding: 1rem;
+  }
+
+  .driver-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .driver-banner-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .driver-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .driver-banner-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .driver-products-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .product-overlay {
+    flex-direction: column;
+  }
+
+  .btn-quick-view,
+  .btn-add-cart {
+    padding: 0.75rem 1.5rem;
+  }
+}

@@ -1,0 +1,78 @@
+### F1 Store User API Endpoints
+
+@baseUrl = https://localhost:7001
+@baseUrlHttp = http://localhost:5000
+
+### Create a new user (Registration)
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "username": "max_verstappen",
+  "email": "max@f1.com",
+  "phoneNumber": "+1234567890",
+  "password": "password123",
+  "confirmPassword": "password123",
+  "profilePhoto": "https://example.com/profile/max.jpg"
+}
+
+### Create another user
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "username": "lewis_hamilton",
+  "email": "lewis@f1.com",
+  "phoneNumber": "+1987654321",
+  "password": "password456",
+  "confirmPassword": "password456",
+  "profilePhoto": "https://example.com/profile/lewis.jpg"
+}
+
+### Get all users
+GET {{baseUrl}}/api/users
+
+### Get user by ID
+GET {{baseUrl}}/api/users/1
+
+### Sign in user
+POST {{baseUrl}}/api/users/signin
+Content-Type: application/json
+
+{
+  "email": "max@f1.com",
+  "password": "password123"
+}
+
+### Sign in with wrong password (should fail)
+POST {{baseUrl}}/api/users/signin
+Content-Type: application/json
+
+{
+  "email": "max@f1.com",
+  "password": "wrongpassword"
+}
+
+### Try to create user with existing email (should fail)
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "username": "max_verstappen2",
+  "email": "max@f1.com",
+  "phoneNumber": "+1111111111",
+  "password": "password789",
+  "confirmPassword": "password789"
+}
+
+### Try to create user with mismatched passwords (should fail)
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "username": "fernando_alonso",
+  "email": "fernando@f1.com",
+  "phoneNumber": "+1555555555",
+  "password": "password123",
+  "confirmPassword": "differentpassword"
+}

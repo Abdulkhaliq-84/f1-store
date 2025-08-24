@@ -1,0 +1,19 @@
+/* App Component Styles */
+.App {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+main {
+  background-color: #ffffff;
+  padding: 2rem;
+  min-height: calc(100vh - 64px); /* Subtract navbar height */
+}
+
+h1 {
+  color: #333333;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}

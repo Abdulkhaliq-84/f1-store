@@ -1,0 +1,93 @@
+### Test Product Endpoints
+
+### 1. Create a new product with image upload
+POST {{baseUrl}}/api/products
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="ProductName"
+
+Ferrari 2024 Team Shirt
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Price"
+
+89.99
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Team"
+
+Ferrari
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Driver"
+
+Charles Leclerc
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Size"
+
+L
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Description"
+
+Official Ferrari F1 team shirt for the 2024 season. Made from high-quality breathable fabric with team branding.
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Image"; filename="ferrari-shirt.jpg"
+Content-Type: image/jpeg
+
+< ./ferrari-shirt.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### 2. Create a new product without image
+POST {{baseUrl}}/api/products
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="ProductName"
+
+Mercedes Team Cap
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Price"
+
+29.99
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Team"
+
+Mercedes
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Size"
+
+M
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="Description"
+
+Official Mercedes F1 team cap. Adjustable fit with embroidered team logo.
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### 3. Get all products
+GET {{baseUrl}}/api/products
+
+### 4. Get product by ID
+GET {{baseUrl}}/api/products/1
+
+### 5. Get products by team
+GET {{baseUrl}}/api/products/team/Ferrari
+
+### 6. Get products by driver
+GET {{baseUrl}}/api/products/driver/Charles Leclerc
+
+### 7. Update product
+PUT {{baseUrl}}/api/products/1
+Content-Type: application/json
+
+{
+  "productName": "Ferrari 2024 Team Shirt - Updated",
+  "price": 95.99,
+  "team": "Ferrari",
+  "driver": "Charles Leclerc",
+  "size": "L",
+  "description": "Updated description for the Ferrari team shirt."
+}
+
+### 8. Delete product
+DELETE {{baseUrl}}/api/products/1
+
+### Variables
+@baseUrl = https://localhost:7001

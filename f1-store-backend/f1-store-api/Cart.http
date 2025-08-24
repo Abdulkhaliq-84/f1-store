@@ -1,0 +1,61 @@
+### F1 Store Cart API Tests
+
+@baseUrl = http://localhost:5000/api/cart
+@userId = 1
+@productId = 1
+
+### Get cart for user
+GET {{baseUrl}}/{{userId}}
+Content-Type: application/json
+
+### Add item to cart
+POST {{baseUrl}}/{{userId}}/items
+Content-Type: application/json
+
+{
+  "productId": {{productId}},
+  "quantity": 2
+}
+
+### Update cart item quantity
+PUT {{baseUrl}}/{{userId}}/items/1
+Content-Type: application/json
+
+{
+  "quantity": 3
+}
+
+### Remove item from cart
+DELETE {{baseUrl}}/{{userId}}/items/1
+
+### Clear entire cart
+DELETE {{baseUrl}}/{{userId}}
+
+### Checkout cart
+POST {{baseUrl}}/{{userId}}/checkout
+Content-Type: application/json
+
+{
+  "shippingAddress": "123 Main Street",
+  "shippingCity": "New York",
+  "shippingPostalCode": "10001",
+  "shippingCountry": "USA"
+}
+
+### Test with multiple products
+POST {{baseUrl}}/{{userId}}/items
+Content-Type: application/json
+
+{
+  "productId": 2,
+  "quantity": 1
+}
+
+###
+POST {{baseUrl}}/{{userId}}/items
+Content-Type: application/json
+
+{
+  "productId": 3,
+  "quantity": 4
+}

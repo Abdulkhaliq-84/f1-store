@@ -1,0 +1,91 @@
+### F1 Store Order API Tests
+
+@baseUrl = http://localhost:5000/api/order
+@userId = 1
+@orderId = 1
+@orderNumber = ORD-20250824132123-1
+
+### Get all orders (Admin)
+GET {{baseUrl}}
+Content-Type: application/json
+
+### Get order by ID
+GET {{baseUrl}}/{{orderId}}
+Content-Type: application/json
+
+### Get order by order number
+GET {{baseUrl}}/number/{{orderNumber}}
+Content-Type: application/json
+
+### Get orders by user ID
+GET {{baseUrl}}/user/{{userId}}
+Content-Type: application/json
+
+### Get orders by status
+GET {{baseUrl}}/status/Pending
+Content-Type: application/json
+
+### Get orders by status - Processing
+GET {{baseUrl}}/status/Processing
+Content-Type: application/json
+
+### Get orders by status - Shipped
+GET {{baseUrl}}/status/Shipped
+Content-Type: application/json
+
+### Get orders by status - Delivered
+GET {{baseUrl}}/status/Delivered
+Content-Type: application/json
+
+### Get orders by status - Cancelled
+GET {{baseUrl}}/status/Cancelled
+Content-Type: application/json
+
+### Update order status
+PUT {{baseUrl}}/{{orderId}}/status
+Content-Type: application/json
+
+{
+  "status": "Processing"
+}
+
+### Update order status to Shipped
+PUT {{baseUrl}}/{{orderId}}/status
+Content-Type: application/json
+
+{
+  "status": "Shipped"
+}
+
+### Update order status to Delivered
+PUT {{baseUrl}}/{{orderId}}/status
+Content-Type: application/json
+
+{
+  "status": "Delivered"
+}
+
+### Update order status to Cancelled
+PUT {{baseUrl}}/{{orderId}}/status
+Content-Type: application/json
+
+{
+  "status": "Cancelled"
+}
+
+### Get total revenue (Admin analytics)
+GET {{baseUrl}}/analytics/revenue
+Content-Type: application/json
+
+### Get total orders count (Admin analytics)
+GET {{baseUrl}}/analytics/count
+Content-Type: application/json
+
+### Delete order (Admin only)
+DELETE {{baseUrl}}/{{orderId}}
+Content-Type: application/json
+
+### Test with different user
+@userId2 = 2
+GET {{baseUrl}}/user/{{userId2}}
+Content-Type: application/json
